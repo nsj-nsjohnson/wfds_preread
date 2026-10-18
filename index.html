@@ -93,11 +93,33 @@ footer{background:var(--navy-deep);color:#b9bde0;padding:36px 0;text-align:cente
 footer strong{color:#fff;font-weight:700}
 
 @media (max-width:680px){
+  body{font-size:1.125rem;line-height:1.6}
+  .wrap{padding:0 18px}
+  .hero{padding:44px 0 40px}
+  .hero::after{width:240px;height:240px;right:-110px;top:-110px;border-width:36px;opacity:.25}
+  .hero h1{font-size:2.1rem}
+  .hero p{font-size:1.05rem}
+  nav ol{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:8px 12px;overflow:visible}
+  nav a{text-align:center;padding:7px 4px;font-size:.9rem;background:var(--mist)}
+  nav a.active{background:var(--navy)}
+  section,.stop{scroll-margin-top:110px}
+  #why,#fgk,#led{padding:44px 0}
+  #series{padding:48px 0 24px}
+  h2{font-size:1.55rem}
+  #why .lede{font-size:1.15rem}
+  .phase .word{font-size:2.6rem;margin-bottom:8px}
+  .phase ul{font-size:1.05rem}
+  .barriers span{font-size:1rem}
+  .stop{padding-bottom:36px}
+  .stop h3{font-size:1.3rem}
+  .col,.pilot,.stop.next .card{padding:20px}
+  .pilot p,.col li{font-size:1.05rem}
   .phases,.cols,.pilots{grid-template-columns:1fr}
   .phase + .phase{padding-left:0;border-left:0;border-top:1px solid rgba(22,26,79,.2)}
   .phase{padding-bottom:18px}
-  .timeline{padding-left:36px}
-  .stop::before{left:-33px}
+  .timeline{padding-left:32px}
+  .timeline::before{left:7px}
+  .stop::before{left:-31px;width:16px;height:16px}
 }
 </style>
 </head>
@@ -113,11 +135,11 @@ footer strong{color:#fff;font-weight:700}
 <nav aria-label="Sections">
   <ol>
     <li><a href="#why">Why</a></li>
-    <li><a href="#fgk">Find, Get, Keep</a></li>
+    <li><a href="#fgk">Phases</a></li>
     <li><a href="#s1">Session 1</a></li>
     <li><a href="#s2">Session 2</a></li>
     <li><a href="#s3">Session 3</a></li>
-    <li><a href="#led">Where it led</a></li>
+    <li><a href="#led">Pilots</a></li>
   </ol>
 </nav>
 
