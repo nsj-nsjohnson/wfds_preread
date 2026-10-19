@@ -50,6 +50,16 @@ p{margin:0 0 1em;max-width:66ch}
 #why{padding:64px 0 56px}
 #why .lede{font-size:1.2rem;line-height:1.6}
 
+h3.sub{font-weight:800;font-size:1.2rem;color:var(--navy);margin:32px 0 10px}
+.stop p a{color:var(--teal);font-weight:700;text-underline-offset:3px}
+.journey{display:block;margin-top:32px;background:var(--navy);color:#fff;text-decoration:none;border-radius:14px;padding:20px 24px;position:relative;max-width:560px}
+.journey::after{content:"";position:absolute;right:22px;top:50%;width:12px;height:12px;border-top:3px solid var(--teal-light);border-right:3px solid var(--teal-light);transform:translateY(-50%) rotate(45deg)}
+.journey:hover{background:var(--navy-deep)}
+.journey:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.journey-title{display:block;font-weight:800;font-size:1.15rem;color:var(--teal-light);padding-right:32px}
+.journey-desc{display:block;color:#dfe2f6;font-size:.98rem;margin-top:4px;padding-right:32px}
+.cols.last{margin-bottom:0}
+
 /* Find Get Keep */
 #fgk{background:var(--teal-soft);padding:64px 0}
 .phases{display:grid;grid-template-columns:repeat(3,1fr);margin:28px 0 36px;border-top:3px solid var(--navy)}
@@ -139,7 +149,7 @@ footer strong{color:#fff;font-weight:700}
     <li><a href="#s1">Session 1</a></li>
     <li><a href="#s2">Session 2</a></li>
     <li><a href="#s3">Session 3</a></li>
-    <li><a href="#led">Pilots</a></li>
+    <li><a href="#led">Priorities</a></li>
   </ol>
 </nav>
 
@@ -149,6 +159,8 @@ footer strong{color:#fff;font-weight:700}
       <h2>Why this series exists</h2>
       <p class="lede">Through workforce projects with the City of Rochester, RochesterWorks, and local employers, TogetherNow kept hearing about the same barriers. People were working hard to find and keep jobs, and what held them back was how loosely the systems around them were connected.</p>
       <p>Partners in that work said many of these challenges crossed organizational lines and needed a broader community conversation. The Workforce Ecosystem Design Series grew out of that, bringing workforce, education, human services, employers, and community partners together to work on the problem as a group.</p>
+      <h3 class="sub">How we approached it</h3>
+      <p>The series uses human-centered design, an approach that starts with the experiences of the people a system is meant to serve. This work began with interviews, surveys, and conversations with community members, providers, and employers, and what they described shaped the Find, Get, Keep framework before anyone discussed solutions. The approach also asks partners to design together and to test ideas on a small scale before expanding them, which suits work where no single organization holds all the pieces.</p>
     </div>
   </section>
 
@@ -172,6 +184,10 @@ footer strong{color:#fff;font-weight:700}
       </div>
       <div class="barrier-label">The same four barriers show up in every phase</div>
       <div class="barriers"><span>Transportation</span><span>Childcare</span><span>System navigation</span><span>Employment readiness</span></div>
+      <a class="journey" href="https://workforcepersona.vercel.app/" target="_blank" rel="noopener">
+        <span class="journey-title">Walk through Tanya's journey</span>
+        <span class="journey-desc">Follow one person through Find, Get, Keep and see how each barrier shows up in her life.</span>
+      </a>
     </div>
   </section>
 
@@ -189,7 +205,7 @@ footer strong{color:#fff;font-weight:700}
         <article class="stop" id="s2">
           <div class="date">Session 2, March 18, 2026</div>
           <h3>Finding what already works</h3>
-          <p>Session two followed one person's story, Tanya's, to see where a path to work can come apart and what might have kept it together. Partners then looked at how their own organizations address transportation, childcare, workforce readiness, and system coordination today. Together they identified which efforts could work as system solutions, ones that can grow and reach people beyond a single neighborhood or program, and ranked the remaining gaps in the order the group felt they should be addressed.</p>
+          <p>Session two followed one person's story, <a href="https://workforcepersona.vercel.app/" target="_blank" rel="noopener">Tanya's</a>, to see where a path to work can come apart and what might have kept it together. Partners then looked at how their own organizations address transportation, childcare, workforce readiness, and system coordination today. Together they identified which efforts could work as system solutions, ones that can grow and reach people beyond a single neighborhood or program, and ranked the remaining gaps in the order the group felt they should be addressed.</p>
         </article>
 
         <article class="stop" id="s3">
@@ -201,7 +217,7 @@ footer strong{color:#fff;font-weight:700}
         <article class="stop next">
           <div class="date">Session 4, October 20, 2026</div>
           <h3>Testing it together</h3>
-          <div class="card"><p>The final session brings this work forward into two proposed pilots and a conversation about how partners can take part.</p></div>
+          <div class="card"><p>The final session brings this work forward and opens a conversation about what comes next and how partners can take part.</p></div>
         </article>
 
       </div>
@@ -210,8 +226,8 @@ footer strong{color:#fff;font-weight:700}
 
   <section id="led">
     <div class="wrap">
-      <h2>What we prioritized and where it led</h2>
-      <div class="cols">
+      <h2>What we prioritized together</h2>
+      <div class="cols last">
         <div class="col">
           <h3>What people need</h3>
           <ul><li>Reliable transportation and childcare</li><li>Accessible pathways to readiness, training, and employment</li><li>Support navigating the transition into work</li><li>Ongoing support to stay employed and grow</li></ul>
@@ -219,17 +235,6 @@ footer strong{color:#fff;font-weight:700}
         <div class="col sys">
           <h3>What the ecosystem needs</h3>
           <ul><li>Visibility into resources and partner capacity</li><li>Support that connects workforce and social care</li><li>Clearer pathways between programs, services, and employers</li><li>Shared approaches to intake, screening, and referral</li></ul>
-        </div>
-      </div>
-      <p class="pilots-intro">On Tuesday we will discuss two proposed pilots that build on this work.</p>
-      <div class="pilots">
-        <div class="pilot">
-          <h4>Workforce Ecosystem Access, Entry &amp; Navigation</h4>
-          <p>Tests how RochesterWorks' existing entry and navigation infrastructure can connect more effectively with training, employment, and social care supports, with other organizations taking part through their own entry points.</p>
-        </div>
-        <div class="pilot">
-          <h4>Partners Ending Homelessness Workforce Partnership</h4>
-          <p>Tests a defined referral pathway between participating housing providers and RochesterWorks navigation, with housing partners continuing to support participants' broader needs.</p>
         </div>
       </div>
     </div>
