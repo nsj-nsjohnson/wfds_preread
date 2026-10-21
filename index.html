@@ -45,6 +45,8 @@ nav ol{list-style:none;display:flex;gap:4px;margin:0 auto;max-width:820px;paddin
 nav a{display:block;white-space:nowrap;padding:6px 12px;border-radius:999px;font-weight:600;font-size:.88rem;color:var(--muted);text-decoration:none}
 nav a:hover{color:var(--navy)}
 nav a.active{background:var(--navy);color:#fff}
+nav .ext a{background:var(--teal);color:#fff}
+nav .ext a:hover{background:var(--navy);color:#fff}
 
 section{scroll-margin-top:64px}
 h2{font-weight:800;font-size:clamp(1.6rem,3.6vw,2.1rem);line-height:1.15;color:var(--navy);margin:0 0 18px;letter-spacing:-.01em}
@@ -112,7 +114,9 @@ footer strong{color:#fff;font-weight:700}
   nav ol{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:8px 12px;overflow:visible}
   nav a{text-align:center;padding:7px 4px;font-size:.9rem;background:var(--mist)}
   nav a.active{background:var(--navy)}
-  section,.stop{scroll-margin-top:110px}
+  nav .ext{grid-column:1 / -1}
+  nav .ext a{background:var(--teal)}
+  section,.stop{scroll-margin-top:150px}
   #why,#fgk,#led{padding:44px 0}
   #series{padding:48px 0 24px}
   h2{font-size:1.55rem}
@@ -207,6 +211,7 @@ SUVORK5CYII=" alt="TogetherNow">
     <li><a href="#s2">Session 2</a></li>
     <li><a href="#s3">Session 3</a></li>
     <li><a href="#led">Priorities</a></li>
+    <li class="ext"><a href="headlines.html">Headlines from 2028</a></li>
   </ol>
 </nav>
 
@@ -295,4 +300,28 @@ SUVORK5CYII=" alt="TogetherNow">
         </div>
       </div>
       <a class="journey" href="headlines.html">
-        <span cla
+        <span class="journey-title">Read the headlines from 2028</span>
+        <span class="journey-desc">What partners at Session 4 hope the news will say two years from now.</span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><strong>TogetherNow</strong><br>Community guides us. Connection drives us.</div>
+</footer>
+
+<script>
+const links=[...document.querySelectorAll('nav a')];
+const targets=['why','fgk','s1','s2','s3','led'].map(id=>document.getElementById(id));
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id));
+    }
+  });
+},{rootMargin:'-35% 0px -60% 0px'});
+targets.forEach(t=>t&&obs.observe(t));
+</script>
+</body>
+</html>
