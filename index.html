@@ -135,9 +135,64 @@ footer strong{color:#fff;font-weight:700}
   .timeline::before{left:7px}
   .stop::before{left:-31px;width:16px;height:16px}
 }
+
+/* Headlines view */
+#hl[hidden],#pre[hidden]{display:none}
+#hl a:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:4px}
+#hl .wrap{max-width:980px;margin:0 auto;padding:0 24px}
+#hl p{margin:0 0 1em;max-width:66ch}
+#hl /* Top bar */
+.top{background:var(--navy);padding:18px 0}
+#hl .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+#hl .top img{width:150px;height:auto;display:block}
+#hl .back{color:#dfe2f6;font-weight:600;font-size:.95rem;text-decoration:none;white-space:nowrap}
+#hl .back:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+#hl /* Masthead */
+.masthead{padding:48px 0 0}
+#hl .masthead .rule{border-top:6px solid var(--navy);border-bottom:1px solid var(--navy);height:10px}
+#hl .masthead h1{font-weight:900;font-size:clamp(2.6rem,9vw,5.6rem);line-height:.95;letter-spacing:-.035em;color:var(--navy);margin:18px 0 14px;text-align:center}
+#hl .dateline{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--navy);border-bottom:3px solid var(--navy);padding:8px 0;font-weight:600;font-size:.92rem;color:var(--muted)}
+#hl .intro{padding:28px 0 8px}
+#hl .intro p{font-size:1.12rem}
+#hl /* Lead */
+.lead{padding:16px 0 40px}
+#hl .lead-card{background:var(--navy);color:#fff;border-radius:16px;padding:40px 36px;position:relative;overflow:hidden}
+#hl .lead-card::after{content:"";position:absolute;right:-90px;bottom:-140px;width:320px;height:320px;border-radius:50%;border:44px solid var(--teal);opacity:.35}
+#hl .lead-card .tag{display:inline-block;background:var(--teal-light);color:var(--navy);font-weight:700;font-size:.85rem;border-radius:999px;padding:3px 12px;margin-bottom:16px;position:relative;z-index:1}
+#hl .lead-card h2{color:#fff;font-weight:800;font-size:clamp(1.6rem,4.2vw,2.6rem);line-height:1.15;letter-spacing:-.015em;margin:0;max-width:26ch;position:relative;z-index:1}
+#hl /* Sections */
+.desk{padding:20px 0 28px}
+#hl .desk h2{font-weight:800;font-size:1.05rem;color:var(--teal);margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid var(--teal)}
+#hl .stories{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-left:1px solid var(--line)}
+#hl .story{padding:14px 20px 18px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+#hl .story h3{margin:0;font-weight:700;font-size:1.12rem;line-height:1.3;color:var(--ink)}
+#hl .story.big{grid-column:span 2;grid-row:span 2;background:var(--teal-soft);display:flex;align-items:flex-end}
+#hl .story.big h3{font-weight:800;font-size:clamp(1.4rem,3vw,1.95rem);line-height:1.15;letter-spacing:-.01em;color:var(--navy)}
+#hl .aside{padding:12px 0 56px}
+#hl .aside-box{border:2px dashed var(--line);border-radius:14px;padding:18px 22px;display:flex;gap:16px;align-items:baseline;flex-wrap:wrap}
+#hl .aside-box span{font-weight:700;color:var(--muted);font-size:.92rem}
+#hl .aside-box h3{margin:0;font-weight:800;font-size:1.2rem;color:var(--navy)}
+#hl footer{background:var(--navy-deep);color:#b9bde0;padding:32px 0;text-align:center;font-weight:500}
+#hl footer a{color:#fff;font-weight:700}
+@media (max-width:760px){
+#hl .stories{grid-template-columns:1fr 1fr}
+#hl .story.big{grid-row:auto}
+}
+@media (max-width:520px){
+#hl{font-size:1.1rem}
+#hl .wrap{padding:0 18px}
+#hl .top img{width:120px}
+#hl .masthead{padding-top:32px}
+#hl .dateline{font-size:.88rem}
+#hl .lead-card{padding:28px 22px}
+#hl .stories{grid-template-columns:1fr}
+#hl .story.big{grid-column:auto}
+#hl .story{padding:14px 16px 16px}
+}
 </style>
 </head>
 <body>
+<div id="pre">
 
 <header class="hero">
   <div class="wrap">
@@ -211,7 +266,7 @@ SUVORK5CYII=" alt="TogetherNow">
     <li><a href="#s2">Session 2</a></li>
     <li><a href="#s3">Session 3</a></li>
     <li><a href="#led">Priorities</a></li>
-    <li class="ext"><a href="headlines.html">Headlines from 2028</a></li>
+    <li class="ext"><a href="#headlines">Headlines from 2028</a></li>
   </ol>
 </nav>
 
@@ -254,74 +309,4 @@ SUVORK5CYII=" alt="TogetherNow">
   </section>
 
   <section id="series">
-    <div class="wrap">
-      <h2>What happened in each session</h2>
-      <div class="timeline">
-
-        <article class="stop" id="s1">
-          <div class="date">Session 1, November 19, 2025</div>
-          <h3>Naming the barriers</h3>
-          <p>The first session set out to build a shared understanding of the barriers rising to the surface and how the work might take shape. Partners described who their organizations serve, then mapped barriers at each stage of Find, Get, Keep. They also reviewed a proposed workflow in which a navigator addresses social care needs and an advisor supports career and training goals, with both staying in contact with employers and providers.</p>
-        </article>
-
-        <article class="stop" id="s2">
-          <div class="date">Session 2, March 18, 2026</div>
-          <h3>Finding what already works</h3>
-          <p>Session two opened with <a href="https://workforcepersona.vercel.app/" target="_blank" rel="noopener">Tanya's journey</a> and a discussion of how her story could have gone differently with the right supports in place. Partners then looked at how their own organizations address transportation, childcare, workforce readiness, and system coordination today, including informal workarounds. Groups identified which existing efforts qualify as system solutions, meaning they can scale, are not limited to one zip code, and do not have overly restrictive eligibility. The session closed with partners ranking the remaining gaps in the order the group should take them on.</p>
-        </article>
-
-        <article class="stop" id="s3">
-          <div class="date">Session 3, June 23, 2026</div>
-          <h3>Designing a connected path</h3>
-          <p>Session three looked at two changes affecting workforce in the region: new investment in semiconductor manufacturing, and federal changes that expand work requirements for SNAP and Medicaid. Partners heard from the Greater Rochester Chamber about Step Up, which gives employers a single front door to semiconductor talent, and from CAO of WNY about the HOPE Initiative, a pilot supporting families with financial literacy, workforce readiness, and employment. Working in groups, partners then designed how existing organizations could support one person from getting connected through training, employment, and the new barriers that come up after. They also worked out what partner structure would keep the effort organized and accountable.</p>
-        </article>
-
-        <article class="stop next">
-          <div class="date">Session 4, October 20, 2026</div>
-          <h3>Imagining 2028</h3>
-          <div class="card"><p>The final session asked what this work should look like two years from now. Partners answered by writing the headlines they hope to read in 2028, collected in <a href="headlines.html">Headlines from 2028</a>.</p></div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="led">
-    <div class="wrap">
-      <h2>What we prioritized together</h2>
-      <div class="cols last">
-        <div class="col">
-          <h3>What people need</h3>
-          <ul><li>Reliable transportation and childcare</li><li>Accessible pathways to readiness, training, and employment</li><li>Support navigating the transition into work</li><li>Ongoing support to stay employed and grow</li></ul>
-        </div>
-        <div class="col sys">
-          <h3>What the ecosystem needs</h3>
-          <ul><li>Visibility into resources and partner capacity</li><li>Support that connects workforce and social care</li><li>Clearer pathways between programs, services, and employers</li><li>Shared approaches to intake, screening, and referral</li></ul>
-        </div>
-      </div>
-      <a class="journey" href="headlines.html">
-        <span class="journey-title">Read the headlines from 2028</span>
-        <span class="journey-desc">What partners at Session 4 hope the news will say two years from now.</span>
-      </a>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap"><strong>TogetherNow</strong><br>Community guides us. Connection drives us.</div>
-</footer>
-
-<script>
-const links=[...document.querySelectorAll('nav a')];
-const targets=['why','fgk','s1','s2','s3','led'].map(id=>document.getElementById(id));
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id));
-    }
-  });
-},{rootMargin:'-35% 0px -60% 0px'});
-targets.forEach(t=>t&&obs.observe(t));
-</script>
-</body>
-</html>
+    
